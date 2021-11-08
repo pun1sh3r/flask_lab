@@ -29,22 +29,7 @@ def index():
 
 
 
-        return render_template('index_1.html',form=searchForm,weather=weather_dict,maps_api=maps_api)
-    return render_template('index_1.html', form=searchForm,weather='',maps_api=maps_api)
+        return render_template('index.html',form=searchForm,weather=weather_dict,maps_api=maps_api)
+    return render_template('index.html', form=searchForm,weather='',maps_api=maps_api)
 
-@app.route('/weather')
-def weatherCheck():
-    # creating a map in the view
-    gmap = Map(
-        identifier="gmap",
-        varname="gmap",
-        lat=37.4419,
-        lng=-122.1419,
-        markers={
-            icons.dots.green: [(37.4419, -122.1419), (37.4500, -122.1350)],
-            icons.dots.blue: [(37.4300, -122.1400, "Hello World")],
-        },
 
-    )
-
-    return render_template("map.html", gmap=gmap)
